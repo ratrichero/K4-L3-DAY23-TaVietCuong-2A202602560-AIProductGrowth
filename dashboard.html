@@ -1,0 +1,378 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="UTF-8">
+<title>OPERATING DASHBOARD — PricePolicy AI Agent (VLandFuture)</title>
+<style>
+  @page {
+    size: A4 portrait;
+    margin: 8mm 10mm 8mm 10mm;
+  }
+  * {
+    box-sizing: border-box;
+    -webkit-print-color-adjust: exact;
+    print-color-adjust: exact;
+  }
+  body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Arial, sans-serif;
+    color: #0f172a;
+    background-color: #ffffff;
+    font-size: 8.2pt;
+    line-height: 1.24;
+    margin: 0;
+    padding: 0;
+  }
+  .page {
+    page-break-after: always;
+    height: 100%;
+    max-height: 278mm;
+    overflow: hidden;
+  }
+  .page:last-child {
+    page-break-after: avoid;
+  }
+  h1 {
+    font-size: 12pt;
+    font-weight: 800;
+    color: #0f172a;
+    margin: 0 0 2px 0;
+    text-transform: uppercase;
+    letter-spacing: -0.2px;
+    border-bottom: 1.5px solid #0f172a;
+    padding-bottom: 2px;
+  }
+  .header-meta {
+    font-size: 8pt;
+    color: #334155;
+    margin-bottom: 4px;
+    line-height: 1.3;
+  }
+  .north-star-box {
+    background-color: #f0f9ff;
+    border-left: 3.5px solid #0284c7;
+    padding: 3px 8px;
+    margin-bottom: 5px;
+    font-size: 8.2pt;
+  }
+  .north-star-box strong {
+    color: #0369a1;
+  }
+  h2 {
+    font-size: 9pt;
+    font-weight: 700;
+    color: #1e293b;
+    margin: 4px 0 2px 0;
+    text-transform: uppercase;
+    letter-spacing: 0.1px;
+    border-bottom: 1px solid #cbd5e1;
+    padding-bottom: 1px;
+  }
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 4px;
+    font-size: 7.8pt;
+  }
+  th, td {
+    border: 1px solid #cbd5e1;
+    padding: 2.5px 5px;
+    text-align: left;
+    vertical-align: middle;
+  }
+  th {
+    background-color: #f8fafc;
+    color: #334155;
+    font-weight: 700;
+  }
+  td.center {
+    text-align: center;
+  }
+  .rules-list {
+    margin: 0 0 4px 0;
+    padding-left: 15px;
+    font-size: 7.7pt;
+  }
+  .rules-list li {
+    margin-bottom: 2px;
+    line-height: 1.22;
+  }
+  .stop-badge {
+    display: inline-block;
+    background-color: #fee2e2;
+    color: #991b1b;
+    font-weight: 800;
+    font-size: 7pt;
+    padding: 0 2.5px;
+    border-radius: 2px;
+    border: 1px solid #f87171;
+  }
+  .forbidden-clause {
+    color: #b91c1c;
+    font-weight: 600;
+  }
+  .kill-box {
+    background-color: #fef2f2;
+    border: 1px solid #fecaca;
+    border-left: 3.5px solid #dc2626;
+    padding: 3px 6px;
+    margin-bottom: 3px;
+    font-size: 7.7pt;
+    line-height: 1.22;
+  }
+  .unmeasured-box {
+    background-color: #fffbeb;
+    border: 1px solid #fef3c7;
+    border-left: 3.5px solid #d97706;
+    padding: 3px 6px;
+    font-size: 7.7pt;
+    line-height: 1.22;
+  }
+  pre {
+    background-color: #f8fafc;
+    border: 1px solid #e2e8f0;
+    padding: 4px 7px;
+    font-family: "SFMono-Regular", Consolas, "Liberation Mono", Menlo, monospace;
+    font-size: 7.2pt;
+    line-height: 1.18;
+    white-space: pre-wrap;
+    margin: 2px 0 5px 0;
+    border-radius: 2px;
+  }
+  .appendix-title {
+    font-size: 11pt;
+    font-weight: 800;
+    color: #0f172a;
+    border-bottom: 1.5px solid #0f172a;
+    padding-bottom: 2px;
+    margin: 0 0 3px 0;
+  }
+</style>
+</head>
+<body>
+
+<!-- TRANG 1: OPERATING DASHBOARD (VỪA KHÍT 1 TRANG A4) -->
+<div class="page">
+  <h1>OPERATING DASHBOARD — PricePolicy AI Agent (VLandFuture)</h1>
+  <div class="header-meta">
+    <strong>Loại mô hình:</strong> B2B2C · <strong>Cập nhật:</strong> 09/10/2026 · <strong>Học viên:</strong> Tạ Việt Cường (MSSV: 2A202602560) · <strong>Kênh:</strong> Partner-Led qua Meey CRM
+  </div>
+
+  <div class="north-star-box">
+    <strong>NORTH STAR:</strong> Approved Quotes per Active Partner per Week — Hiện tại: <strong>0</strong> (pilot) — Mục tiêu: <strong>75 hồ sơ/sàn/tuần</strong> (~15 báo giá/ngày làm việc)
+  </div>
+
+  <h2>1. Đèn báo sớm (Leading — theo dõi hằng ngày/tuần)</h2>
+  <table>
+    <thead>
+      <tr>
+        <th style="width: 29%;">Tên đèn</th>
+        <th style="width: 9%;" class="center">Hiện tại</th>
+        <th style="width: 26%;" class="center">Ngưỡng 🟢 / 🟡 / 🔴</th>
+        <th style="width: 10%;" class="center">Nguồn</th>
+        <th style="width: 26%;">Báo trước cho</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><strong>Partner Activation Rate ⭐</strong></td>
+        <td class="center">0%</td>
+        <td class="center">≥ 60% / 30–60% / &lt; 30%</td>
+        <td class="center">[TB]</td>
+        <td>Volume hệ thống & Doanh thu/partner</td>
+      </tr>
+      <tr>
+        <td><strong>Time-to-First-End-User (TTFEU)</strong></td>
+        <td class="center">0 ngày</td>
+        <td class="center">&lt; 14 / 14–30 / &gt; 30 ngày</td>
+        <td class="center">[TB]</td>
+        <td>Partner Activation & Tỷ lệ sàn bỏ xó app</td>
+      </tr>
+      <tr>
+        <td><strong>Tỷ lệ Containment (AI tự duyệt)</strong></td>
+        <td class="center">82.0%</td>
+        <td class="center">≥ 82.0% / 74.1–82.0% / &lt; 74.1%</td>
+        <td class="center">[MH]</td>
+        <td>Chi phí HITL ($9/h) & Gross Margin sau rev-share</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <h2>2. Đèn vận hành (Operating — theo dõi hằng tuần/tháng)</h2>
+  <table>
+    <thead>
+      <tr>
+        <th style="width: 29%;">Tên đèn</th>
+        <th style="width: 9%;" class="center">Hiện tại</th>
+        <th style="width: 26%;" class="center">Ngưỡng 🟢 / 🟡 / 🔴</th>
+        <th style="width: 10%;" class="center">Nguồn</th>
+        <th style="width: 26%;">Báo trước cho</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><strong>Gross Margin sau Rev-Share 20%</strong></td>
+        <td class="center">52.6%</td>
+        <td class="center">≥ 52.6% / 40.0–52.6% / &lt; 40.0%</td>
+        <td class="center">[MH]</td>
+        <td>Lợi nhuận ròng & Runway tài chính</td>
+      </tr>
+      <tr>
+        <td><strong>Inference ÷ Doanh thu từng Partner</strong></td>
+        <td class="center">4.6%</td>
+        <td class="center">&lt; 15% / 15–25% / &gt; 25%</td>
+        <td class="center">[BM] 08/10/26</td>
+        <td>Gross margin sàn & dữ liệu chính sách bị phình</td>
+      </tr>
+      <tr>
+        <td><strong>Tập trung Volume đối tác</strong></td>
+        <td class="center">100%</td>
+        <td class="center">&lt; 40% / 40–60% / &gt; 60%</td>
+        <td class="center">[BM] 08/10/26</td>
+        <td>Độ ổn định dòng tiền & rủi ro bị ép độc quyền</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <h2>3. Đèn kết quả (Lagging — theo dõi hằng quý)</h2>
+  <table>
+    <thead>
+      <tr>
+        <th style="width: 45%;">Tên đèn</th>
+        <th style="width: 15%;" class="center">Hiện tại</th>
+        <th style="width: 25%;" class="center">Ngưỡng 🟢 / 🟡 / 🔴</th>
+        <th style="width: 15%;" class="center">Nguồn</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><strong>CAC Payback qua kênh Partner-Led</strong></td>
+        <td class="center">Chưa đo</td>
+        <td class="center">&lt; 4 / 4–12 / &gt; 12 tháng</td>
+        <td class="center">[BM] 08/10/2026</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <h2>4. 5 luật quyết định (⏹ = luật dừng bắt buộc)</h2>
+  <ol class="rules-list">
+    <li><span class="stop-badge">⏹ DỪNG</span> <strong>NẾU</strong> Partner Activation Rate &lt; 30% <strong>TRONG</strong> 45 ngày <strong>VÀ</strong> đã kết nối cho ≥ 3 sàn <strong>THÌ</strong> đóng băng việc ký mới, cử Product Lead cắm chốt trực tiếp 3 buổi/tuần tại sàn gỡ nghẽn <strong>KHÔNG THÌ</strong> <span class="forbidden-clause">cấm lấy số lượng "sàn đã ký hợp tác" ra để báo cáo thành tích tăng trưởng</span>.</li>
+    <li><span class="stop-badge">⏹ DỪNG</span> <strong>NẾU</strong> Tỷ lệ Containment &lt; 74.1% <strong>TRONG</strong> 2 tuần liên tiếp <strong>VÀ</strong> có ≥ 200 yêu cầu báo giá <strong>THÌ</strong> ngắt quyền tính giá tự động các dự án chiết khấu đa tầng, siết lại regex và Python rule engine <strong>KHÔNG THÌ</strong> <span class="forbidden-clause">cấm tuyển thêm nhân sự HITL trực ca dọn rác, và cấm đổ lỗi cho sales</span>.</li>
+    <li><strong>NẾU</strong> Gross Margin sau Rev-share &lt; 40% <strong>TRÊN</strong> 1 sàn trong 1 tháng <strong>THÌ</strong> áp dụng mức sàn phí hạ tầng $0.30/báo giá (pass-through) hoặc tạm dừng sàn đó yêu cầu chuẩn hóa lại file Excel <strong>KHÔNG THÌ</strong> <span class="forbidden-clause">không được bù lỗ với hy vọng "chờ có volume lớn sẽ tự lãi"</span>.</li>
+    <li><span class="stop-badge">⏹ DỪNG</span> <strong>NẾU</strong> 1 sàn chiếm &gt; 60% volume <strong>TRONG</strong> 2 tháng liên tiếp <strong>THÌ</strong> đóng băng toàn bộ yêu cầu làm tính năng riêng cho sàn đó, dồn 80% thời gian kích hoạt 3 sàn kế tiếp <strong>KHÔNG THÌ</strong> <span class="forbidden-clause">cấm ký cam kết độc quyền phân phối hay ưu đãi giá riêng dù họ dọa rời bỏ</span>.</li>
+    <li><strong>NẾU</strong> TTFEU &gt; 30 ngày tại sàn đã bàn giao kỹ thuật <strong>THÌ</strong> tổ chức ngay buổi thực chiến 45 phút sáng thứ Hai, cầm tay chỉ việc cho 5 sales cứng tạo báo giá thật và tặng 50 lượt tạo báo giá miễn phí <strong>KHÔNG THÌ</strong> <span class="forbidden-clause">cấm gửi tài liệu PDF hướng dẫn qua Zalo rồi ngồi chờ sales tự đọc</span>.</li>
+  </ol>
+
+  <h2>5. Cổng gác 90 ngày</h2>
+  <table>
+    <thead>
+      <tr>
+        <th style="width: 7%;" class="center">Ngày</th>
+        <th style="width: 25%;">Metric (1)</th>
+        <th style="width: 25%;">Ngưỡng qua cổng</th>
+        <th style="width: 34%;">Bằng chứng vật lý</th>
+        <th style="width: 9%;" class="center">Nếu trượt</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td class="center"><strong>30</strong></td>
+        <td>Lượt báo giá sàn pilot</td>
+        <td>≥ 300 báo giá, 0 sai số học, thời gian &lt; 15s</td>
+        <td>300 mã băm SHA-256 khớp 100% biên bản cọc kế toán sàn VLandFuture</td>
+        <td class="center"><strong>FIX</strong></td>
+      </tr>
+      <tr>
+        <td class="center"><strong>60</strong></td>
+        <td>Tỷ lệ Containment</td>
+        <td>≥ 82.0% trên ≥ 5 sàn Meey CRM; NPS sales ≥ 60</td>
+        <td>Dashboard log tỷ lệ HITL & khảo sát ẩn danh 100 sales từ 5 sàn đối tác</td>
+        <td class="center"><strong>FIX</strong></td>
+      </tr>
+      <tr>
+        <td class="center"><strong>90</strong></td>
+        <td>Volume & MRR</td>
+        <td>≥ 10.000 báo giá/tháng (≥ 15 sàn), MRR ≥ $9.900, Payback &lt; 4 tháng</td>
+        <td>Biên bản đối soát chữ ký số Meey Land – VLandFuture + sao kê rev-share</td>
+        <td class="center"><strong>PIVOT/KILL</strong></td>
+      </tr>
+    </tbody>
+  </table>
+
+  <div class="kill-box">
+    <strong>KILL CRITERIA:</strong> Sau 90 ngày (hạn chót <strong>10/01/2027</strong>), nếu sau 1 lần FIX mà tỷ lệ Containment vẫn dưới 74.1% trên toàn hệ thống hoặc Meey CRM không kích hoạt được tối thiểu 5 sàn có sales phát sinh báo giá thật, dự án sẽ <strong>DỪNG HOÀN TOÀN</strong>, thanh lý máy chủ và hoàn trả tiền đối tác.
+  </div>
+
+  <div class="unmeasured-box">
+    <strong>CHƯA ĐO ĐƯỢC:</strong> Net Revenue Retention (NRR) của các sàn đối tác và tỷ lệ churn sau 12 tháng. Cần tối thiểu 6–12 tháng vận hành thực tế để trải qua đủ chu kỳ gia hạn hợp đồng bán buôn của các sàn BĐS; dự kiến có số liệu sơ bộ vào ngày <strong>10/04/2027</strong> sau khi kết thúc quý 1/2027.
+  </div>
+</div>
+
+<!-- TRANG 2: PHỤ LỤC PHÉP TÍNH [MH] (VỪA KHÍT 1 TRANG A4) -->
+<div class="page">
+  <div class="appendix-title">PHỤ LỤC PHÉP TÍNH [MH] — PricePolicy AI Agent (VLandFuture)</div>
+  <div class="header-meta">
+    Họ tên: <strong>Tạ Việt Cường</strong> · MSSV: <strong>2A202602560</strong> · Đối chiếu: <code>Day22-AI-Product-GTM-Monetization-Model.xlsx</code>
+  </div>
+
+  <p style="margin: 2px 0 4px 0; font-size: 7.8pt; color: #475569;">
+    Hai phép tính dưới đây chứng minh cơ sở số học của các ngưỡng sống còn trên dashboard, suy ngược trực tiếp từ cấu trúc chi phí Unit Economics và mô hình tài chính Day 22.
+  </p>
+
+  <h2>[MH] 1 — Breakeven Containment Rate (Tỷ lệ tự động hóa tối thiểu để đạt Gross Margin ≥ 60%)</h2>
+  <pre>Đầu vào (từ Sheet 1_Cost_Job & 2_Pricing trong mô hình tài chính Day 22):
+• Giá bán đề xuất cho mỗi hồ sơ báo giá bảo chứng: P = $0.99 / job
+• Gross Margin mục tiêu tối thiểu để giữ an toàn mô hình: GM = 60% (0.60)
+• Chi phí biến đổi thuần (API Claude Haiku 4.5 có cache $0.0237 + Vector DB Infra $0.02 + Retry 8% $0.0019): v = $0.045596 / job
+• Chi phí nhân sự QA nội bộ (5% ca × 2 phút × lương $9/giờ fully-loaded): q = $0.015 / job
+• Chi phí nhân sự xử lý 1 ca ngoại lệ HITL leo thang (6 phút × lương $9/giờ fully-loaded): e = $0.90 / ca ngoại lệ
+
+Phép tính:
+Áp dụng công thức giải phương trình Breakeven Containment Rate (R) để đảm bảo Gross Margin đạt tối thiểu 60%:
+  R ≥ (v + q + e) ÷ [ P × (1 − GM) + e ]
+  Tử số  = 0.045596 + 0.015 + 0.90 = 0.960596
+  Mẫu số = 0.99 × (1 − 0.60) + 0.90 = 0.99 × 0.40 + 0.90 = 0.396 + 0.90 = 1.296
+  R ≥ 0.960596 ÷ 1.296 = 0.7412006 (xấp xỉ 74.12%)
+
+Độ nhạy (Sensitivity Analysis từ Sheet 2_Pricing):
+  • Containment = 90.0%  → Cost/Job = $0.1673  → Gross Margin = 83.1%  (Rất an toàn)
+  • Containment = 82.0%  → Cost/Job = $0.2715  → Gross Margin = 72.6%  (Mức vận hành thiết kế)
+  • Containment = 74.1%  → Cost/Job = $0.3960  → Gross Margin = 60.0%  (Ngưỡng hòa vốn an toàn)
+  • Containment = 60.0%  → Cost/Job = $0.7010  → Gross Margin = 29.2%  (Vùng đỏ nguy hiểm, lỗ nặng khi trừ chi phí vận hành)
+
+Kết luận phân loại ngưỡng:
+→ 🟢 Xanh:  ≥ 82.0% (Mô hình đạt biên lợi nhuận gộp thiết kế 72.6%, HITL trong tầm kiểm soát)
+→ 🟡 Vàng:  74.1% – 82.0% (Gross Margin từ 60% đến 72.6%, chi phí nhân sự bắt đầu phình to, cần rà soát prompt)
+→ 🔴 Đỏ:    < 74.1% (Gross Margin tụt dưới 60%, chi phí HITL nuốt chửng biên lợi nhuận, kích hoạt Luật Dừng số 2)</pre>
+
+  <h2>[MH] 2 — Gross Margin sau Rev-share 20% (Tối thiểu 52.6% để đảm bảo Unit Economics)</h2>
+  <pre>Đầu vào (từ Sheet 2_Pricing & 4_Channel_Fit trong mô hình tài chính Day 22):
+• Giá bán niêm yết cho sàn BĐS: P = $0.99 / job
+• Tỷ lệ chia sẻ doanh thu cho đối tác nền tảng Meey CRM (Partner-Led): RevShare = 20% (0.20)
+• Doanh thu ròng thực nhận sau khi trả đối tác: P_net = $0.99 × (1 − 0.20) = $0.792 / job
+• Chi phí COGS đơn vị chuẩn tại containment 82%: COGS = $0.2715 / job
+• Benchmark Gross Margin công ty AI-Native năm 2026 của ICONIQ (State of AI 2026): ~53% (0.53)
+
+Phép tính:
+Biên lợi nhuận gộp thực tế của công ty trên mỗi hồ sơ báo giá bán ra sau khi đã cắt 20% cho đối tác:
+  Lãi gộp đơn vị sau chia sẻ = P_net − COGS = $0.792 − $0.2715 = $0.5205 / job
+  GM sau rev-share (tính trên giá niêm yết P) = $0.5205 ÷ $0.99 = 52.5758% ≈ 52.6%
+  (Nếu tính trên doanh thu ròng P_net: GM_net = $0.5205 ÷ $0.792 = 65.7%)
+
+Ngưỡng báo động khi chi phí HITL tăng hoặc đối tác đòi tăng mức chiết khấu:
+  Nếu GM sau rev-share tụt xuống < 40% (tức Lãi gộp < $0.396/job, tương đương COGS vọt lên > $0.396 do containment tụt về 70%):
+  Lợi nhuận ròng không còn đủ bù đắp chi phí server và đội ngũ kỹ thuật.
+
+So sánh với kịch bản Direct Sales:
+  • Direct Sales: Giá bán $0.99, GM 72.6%, nhưng CAC = $32.000/deal (Cost/Opp $8.000, Win rate 25%).
+    Ngân sách CAC cho phép tại ARPU $200 chỉ là $1.742 → Lệch 18.4 lần (Bất khả thi).
+  • Partner-Led: Chấp nhận cắt 20% doanh thu (GM còn 52.6%), nhưng tận dụng được tệp hàng trăm sàn BĐS có sẵn của Meey CRM,
+    đưa CAC Payback về dưới 4 tháng, phù hợp hoàn hảo với nguồn lực startup.
+
+Kết luận phân loại ngưỡng:
+→ 🟢 Xanh:  ≥ 52.6% (Vận hành chuẩn, bám sát benchmark ngành AI-Native 53% của ICONIQ)
+→ 🟡 Vàng:  40.0% – 52.6% (Chi phí HITL tăng nhẹ hoặc phát sinh chiết khấu phụ, biên bị mỏng nhưng vẫn có lãi)
+→ 🔴 Đỏ:    < 40.0% (Mô hình gãy, công ty trở thành đơn vị gia công dịch vụ bán lỗ, kích hoạt Luật số 3 đàm phán pass-through fee)</pre>
+</div>
+
+</body>
+</html>
